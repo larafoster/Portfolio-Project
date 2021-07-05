@@ -1,38 +1,265 @@
-/* starter mobile-first style from flexbox*/
+/* color scheme sourced from https://color.adobe.com// */
 
-.wrapper {
+:root {
+  --pink: #D95F69;
+  --yellow: #F2E18D;
+  --tan: #BFB99B;
+  --brown: #795548;
+  --orange: #F29544;
+  --green: #48a551;
+  --yellow-dk: #fcc02d;
+  --purple: #9d27b0;
+  --blue: #3f51b5;
+  --cyan: #00bbd4;
+  --light: #F2F2F2;
+  --dark: #49332c;
+  --gray-lt: #fafafa;
+  --gray: #ccc;
+  --gray-md: rgb(182, 179, 179);
+  --shadow: 5px 0 5px -2px var(--gray);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body {
   display: flex;
-  flex-flow: row wrap;
+  min-height: 100vh;
+  flex-direction: row;
+  margin: 0;
 }
 
-/* We tell all items to be 100% width, via flex-basis */
-.wrapper > * {
-  flex: 1 100%;
+small {
+  font-size: 75%;
 }
 
-/* We rely on source order for mobile-first approach
- * in this case:
- * 1. header
- * 2. article
- * 3. aside 1
- * 4. aside 2
- * 5. footer
- */
-
-/* Medium screens */
-@media all and (min-width: 600px) {
-  /* We tell both sidebars to share a row */
-  .aside { flex: 1 auto; }
+big {
+  font-size: 125%;
 }
 
-/* Large screens */
-@media all and (min-width: 800px) {
-  /* We invert order of first sidebar and main
-   * And tell the main element to take twice as much width as the other two sidebars 
-   */
-  .main { flex: 2 0px; }
-  .aside-1 { order: 1; }
-  .main    { order: 2; }
-  .aside-2 { order: 3; }
-  .footer  { order: 4; }
+.col-1 {
+  background: var(--light);
+  box-shadow: var(--shadow);
+  flex: 1;
+}
+
+/* trying to get my sidebar content not to scroll
+#sidebar {
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+	overflow: auto;
+}
+*/
+
+.col-2 {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.content>article {
+  flex: 4;
+  min-height: 60vh;
+}
+
+.s-content {
+  padding: 30px;
+}
+
+blockquote {
+  border-left: 6px solid #795548;
+  margin: 20px 10px 0px 20px;
+  padding-left: 1rem;
+}
+
+blockquote h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #795548;
+}
+
+header {
+  background: var(--tan);
+}
+
+article h3 {
+  font-size: 1.7rem;
+  padding-left: 1rem;
+  font-weight: 300;
+  color: #795548;
+  margin-left: 26px;
+}
+
+nav h3 {
+  font-size: 40px;
+  padding: 15px 0 0 15px;
+  color: var(--orange);
+  font-weight: 300;
+}
+
+nav .small-title {
+  margin-top: -28px;
+  color: var(--dark);
+  padding-left: 18px;
+  font-weight: 300;
+}
+
+nav hr {
+  background-color: var(--gray);
+  height: 1px;
+  border: none;
+}
+
+/* Style the sidebar - fixed full height */
+
+.navigation {
+  padding-top: 16px;
+  margin-left: 10px;
+  line-height: 2.5rem;
+}
+
+/* Style sidebar links */
+
+.navigation a {
+  padding: 6px 8px 6px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--dark);
+  display: block;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+.navigation a:hover, a:active {
+  background-color: #fafafa;
+  border-left: 4px solid;
+  margin-left: -10px;
+}
+
+/* icon colors */
+
+.orange {
+  color: var(--orange);
+}
+
+.green {
+  color: var(--green);
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.yellow {
+  color: var(--yellow-dk);
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.cyan {
+  color: var(--cyan);
+}
+
+/* Style links on mouse-over */
+
+
+
+section .content {
+  padding: 40px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.heading-divider {
+  display: flex;
+  background-color: var(--orange);
+  height: 10vh;
+  padding: 20px;
+  margin-bottom: 5px;
+}
+
+.heading-divider h1 {
+  color: var(--light);
+  text-transform: uppercase;
+  font-size: 2.4em;
+  font-weight: 400;
+  align-items: flex-end;
+}
+
+footer {
+  background: var(--tan);
+  height: 10vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--light);
+}
+
+footer ul {
+  display: inline-block;
+}
+
+/*card code */
+
+img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+.cards {
+  display: flex;
+  
+}
+.card {
+  background: white;
+  margin-bottom: 2em;
+  border: 1px solid var(--gray-md);
+}
+
+.card a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.card a:hover {
+  box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
+}
+
+.card-content {
+  padding: 1.4em;
+}
+
+.card-content h2 {
+  margin-top: 0;
+  margin-bottom: .5em;
+  font-weight: bold;
+}
+
+.card-content p {
+  font-size: 80%;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 768px) {
+  .col-1 {
+    display: none;
+  }
 }
