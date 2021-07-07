@@ -32,7 +32,7 @@ SO THAT I can review samples of their work and assess whether they're a good can
 
 The following animation shows the web application's appearance and functionality:
 
-![portfolio demo](./Assets/images/02-advanced-css-homework-demo.gif)
+![portfolio demo](.Assets/images/02-advanced-css-homework-demo.gif)
 
 
 
