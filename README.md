@@ -1,7 +1,13 @@
 # 02 Advanced CSS: Portfolio
 
 ## Description
+* Updated portfolio featuring Project 1 and two exemplary homework assignments.
 
+* Updated GitHub profile with pinned repositories featuring Project 1 and two exemplary assignments.
+
+* Updated resume with download in pdf
+
+* Updated LinkedIn profile - added bootcamp info under education
 ### Links
 
 [Link to the deployed website](https://larafoster.github.io/Portfolio-Project/)
