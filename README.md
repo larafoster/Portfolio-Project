@@ -23,7 +23,7 @@ The deployed website linked above was deployed using GitHub Pages.
 
 Once deployed the application can be viewed in a traditional desktop web browser and it is optimized for small screens.
 
-![screenshot of index.html](./assets/images/screenshot.png)
+![screenshot of index.html](./assets/screenshot.png)
 
 ## User Story
 
